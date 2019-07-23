@@ -1,0 +1,44 @@
+inherit_from: .rubocop_todo.yml
+
+require: rubocop-rspec
+
+AllCops:
+  DisplayCopNames: true
+  Exclude:
+    - 'bin/*'
+    - 'config/**/*'
+    - 'db/*'
+    - 'vendor/**/*'
+Rails:
+  Enabled: true
+Documentation:
+  Enabled: false
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*.rb'
+    - 'db/migrate/*.rb'
+Metrics/MethodLength:
+  Exclude:
+    - 'db/migrate/*'
+Metrics/AbcSize:
+  Exclude:
+    - 'db/migrate/*'
+Layout/AlignParameters:
+  EnforcedStyle: with_fixed_indentation
+Layout/IndentFirstArgument:
+  EnforcedStyle: consistent
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+RSpec/ExampleLength:
+  Enabled: false
+RSpec/DescribeClass:
+  Exclude:
+    - 'spec/requests/**/*'
+Style/EmptyMethod:
+  EnforcedStyle: expanded
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: comma
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: comma
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: comma

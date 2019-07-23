@@ -1,0 +1,12 @@
+development:
+  adapter: postgresql
+  host: localhost
+  encoding: utf8
+  database: github_top_repositories_development
+  schema_search_path: public, common, extensions
+test:
+  adapter: postgresql
+  host: localhost
+  encoding: utf8
+  database: github_top_repositories_test
+  schema_search_path: public, common, extensions
