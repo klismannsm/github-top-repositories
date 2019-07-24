@@ -5,6 +5,7 @@ source 'https://rubygems.org'
 ruby '2.6.3'
 
 gem 'bootsnap', '>= 1.1.0', require: false
+gem 'excon', '0.65.0'
 gem 'jbuilder', '~> 2.5'
 gem 'pg', '1.1.4'
 gem 'puma', '~> 3.11'
@@ -31,6 +32,8 @@ end
 
 group :test do
   gem 'rspec', '3.8.0'
+  gem 'rspec-rails', '3.8.2'
   gem 'rspec_junit_formatter', '0.4.1'
   gem 'timecop', '0.9.1'
+  gem 'webmock', '3.6.0', require: 'webmock/rspec'
 end
