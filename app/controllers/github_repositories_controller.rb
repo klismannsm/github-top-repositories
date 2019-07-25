@@ -4,7 +4,9 @@ class GithubRepositoriesController < ApplicationController
   def index
     respond_to do |format|
       format.html
-      format.json { render json: GithubRepositoryDatatable.new(params) }
+      format.json do
+        render json: GithubRepositoryDatatable.new(params, view_context: view_context)
+      end
     end
   end
 
@@ -18,6 +20,10 @@ class GithubRepositoriesController < ApplicationController
     GithubRepository.destroy_all
 
     redirect_to github_repositories_path
+  end
+
+  def show
+    @repository = GithubRepository.find(params[:id])
   end
 
   private
