@@ -68,7 +68,7 @@ jobs:
       - run:
           name: Deploy to production
           command: |
-            dpl --provider=heroku --app=ksm-github-api --api-key=$HEROKU_API_KEY
+            dpl --provider=heroku --app=ksm-github-top-repositories --api-key=$HEROKU_API_KEY
 
 workflows:
   version: 2
@@ -81,7 +81,6 @@ workflows:
   release:
     jobs:
       - production:
-          context: org-global
           filters:
             branches:
               ignore: /.*/
