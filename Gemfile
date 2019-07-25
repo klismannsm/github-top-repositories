@@ -15,6 +15,11 @@ gem 'rubocop-rspec', '1.33.0', require: false
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 
+gem 'ajax-datatables-rails', '1.0.0'
+gem 'bootstrap', '4.3.1'
+gem 'jquery-datatables', '1.10.19.1'
+gem 'jquery-rails', '4.3.5'
+
 group :development, :test do
   gem 'dotenv-rails', '2.7.4'
 
