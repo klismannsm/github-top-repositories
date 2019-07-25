@@ -1,0 +1,19 @@
+pt-BR:
+  titles:
+    github_test: Teste de API do GitHub
+    github_repositories: Repositórios do GitHub
+  buttons:
+    github_repository:
+      import: Importar repositórios
+      refresh: Atualizar tabela
+      back: Voltar
+      destroy: Limpar base
+  table_titles:
+    github_repository:
+      id: Código
+      github_id: Id no github
+      name: Nome
+      language: Linguagem
+      stargazers_count: Número de estrelas
+    default:
+      actions: Ações
