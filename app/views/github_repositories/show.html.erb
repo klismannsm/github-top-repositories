@@ -1,0 +1,77 @@
+<div class="m-github-repository__body">
+  <div class="row wrapper border-bottom white-bg page-heading">
+    <h2><%= t('titles.github_repository') %></h2>
+  </div>
+
+  <div class="row wrapper wrapper-content animated fadeInRight">
+    <div class="col-xs-12">
+      <%=
+        link_to t('buttons.github_repository.back'),
+        github_repositories_path,
+        class: 'btn btn-primary margin-right'
+      %>
+
+      <dl class="dl-horizontal m-github-repository__information-container">
+        <% simple_fields.each do |field| %>
+          <div class="m-github_repository__attribute-container">
+            <dt class="m-github_repository__attribute-label">
+              <%= t("models.labels.github_repositories.#{field}") %>
+            </dt>
+            <dd class="m-github_repository__attribute-value">
+              <%= @repository[field] %>
+            </dd>
+          </div>
+        <% end %>
+
+        <% date_fields.each do |field| %>
+          <div class="m-github_repository__attribute-container">
+            <dt class="m-github_repository__attribute-label">
+              <%= t("models.labels.github_repositories.#{field}") %>
+            </dt>
+            <dd class="m-github_repository__attribute-value">
+              <%= format_datetime(@repository.read_attribute(field)) %>
+            </dd>
+          </div>
+        <% end %>
+
+        <% boolean_fields.each do |field| %>
+          <div class="m-github_repository__attribute-container">
+            <dt class="m-github_repository__attribute">
+              <%= t("models.labels.github_repositories.#{field}") %>
+            </dt>
+            <dd class="m-github_repository__attribute">
+              <%= t("boolean.#{@repository[field]}") %>
+            </dd>
+          </div>
+        <% end %>
+
+        <% url_fields.each do |field| %>
+          <div class="m-github_repository__attribute-container">
+            <dt class="m-github_repository__attribute-label">
+              <%= t("models.labels.github_repositories.#{field}") %>
+            </dt>
+            <dd class="m-github_repository__attribute-value">
+              <a href='<%= @repository[field] %>' target="_blank">
+                <%= @repository[field] %>
+              </a>
+            </dd>
+          </div>
+        <% end %>
+
+        <div class="m-github-repository__owner-block">
+          <strong>Informações do responsável do repositório</strong>
+          <% owner_fields.each do |field| %>
+            <div class="m-github_repository__attribute-container">
+              <dt class="m-github_repository__attribute-label">
+                <%= t("models.labels.github_repository_owners.#{field}") %>
+              </dt>
+              <dd class="m-github_repository__attribute-value">
+                <%= @repository.github_repository_owner[field] %>
+              </dd>
+            </div>
+          <% end %>
+        </div>
+      </dl>
+    </div>
+  </div>
+</div>

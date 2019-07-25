@@ -3,7 +3,12 @@
     padding: 50px 300px;
   }
 
-  &__toolbar {
-    margin: 20px 0px 0px 20px;
+  &__information-container {
+    padding: 10px;
+  }
+
+  &__owner-block {
+    background-color:#ededed;
+    padding: 20px;
   }
 }
